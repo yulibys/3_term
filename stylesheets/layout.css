@@ -13,83 +13,30 @@ body {
 .section-1 {
   position: relative;
   width: 100vw;
-  height: 62vw;
+  height: 180vh; /* временно сделай большой, потом можно уменьшить */
   background: #181818;
 }
 
-.scene {
+.scene1 {
   position: sticky;
   top: 0;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  background: #181818;
 }
 
-.frame {
+.scroll-video-source {
+  display: none;
+}
+
+.scroll-canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
-  z-index: 1;
-  transition: opacity 0.4s linear;
 }
-
-.sect_1 {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  z-index: 2;
-  pointer-events: none;
-  opacity: 1;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  pointer-events: none;
-}
-
-.decor {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 42vw;
-}
-
-.decor img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.title {
-  position: absolute;
-  top: 8vw;
-  right: 9vw;
-  color: #91040c;
-  font-family: 'Actay_wide';
-  font-size: 3.3vw;
-  line-height: 0.92;
-  text-align: left;
-  max-width: 49vw;
-}
-
-.counter {
-  position: absolute;
-  right: 8vw;
-  bottom: 5vw;
-  color: #91040c;
-  font-family: 'Actay';
-  font-size: 2.2vw;
-  line-height: 1;
-}
-
 .section-2 {
   width: 100vw;
   height: 38vw;
@@ -394,7 +341,17 @@ body {
   z-index: 1;
   pointer-events: none;
 }
-
+.birch5 {
+  position: absolute;
+  top: 48%;
+  left: 42vw;
+  width: 16vw;
+  height: auto;
+  transform: translateY(-50%) rotate(-79deg);
+  transform-origin: center;
+  z-index: 2;
+  pointer-events: none;
+}
 .linewrap5 {
   position: absolute;
   top: 40%;
@@ -452,15 +409,16 @@ body {
 
 .portal5 {
   position: absolute;
-  width: 33vw;
-  height: 33vw;
+  width: 35vw;
+  height: 35vw;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   overflow: hidden;
   z-index: 4;
-  background: #181818;
+  background: #e2e4ef;
+  pointer-events: none;
 }
 
 .video5,
@@ -471,14 +429,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.canvas5 {
-  display: none;
-}
-
-.photo5 {
-  display: none;
+  filter: grayscale(100%);
 }
 
 .btn5 {
@@ -486,22 +437,21 @@ body {
   width: 4.2vw;
   height: 4.2vw;
   left: 50%;
-  top: 74%;
+  top: 90%;
   transform: translate(-50%, -50%);
-  pointer-events: auto;
-
-  background: transparent;
-  border: 0.5vw solid #181818; /* ТВОЯ ЧЕРНАЯ ОБВОДКА */
+  border: 0.45vw solid #181818;
+  background-color: #e2e4ef;
   border-radius: 50%;
-
-  z-index: 7;
+  z-index: 999;
   cursor: pointer;
+  pointer-events: auto;
 }
+
 .btn5::after {
   content: '';
   position: absolute;
-  inset: 0.8vw;
-  border: 0.3vw solid #181818;
+  inset: 0.55vw;
+  border: 0.22vw solid #181818;
   border-radius: 50%;
 }
 .hand5 {
@@ -634,4 +584,143 @@ body {
 
 .section-5.done .appleplate5 {
   animation: none;
+}
+/* 6 */
+.section-6 {
+  position: relative;
+  width: 100vw;
+  height: 60vw;
+  background-image: url(../images/sect_6.svg);
+  background-size: 100vw 60vw;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+}
+#text10 {
+  position: absolute;
+  font-family: 'Balkara';
+  font-size: 6.77vw;
+  color: #e2e4ef;
+  top: 9.86vw;
+}
+.bucket1 {
+  position: absolute;
+  width: 16.5vw;
+  height: 17.8vw;
+  background-image: url(../images/leshiyy.png);
+  background-size: 16.5vw 17.8vw;
+  background-repeat: no-repeat;
+  left: 11vw;
+  bottom: 8.4vw;
+}
+.bucket1:hover {
+  transform: rotate(15deg);
+}
+.bucket2 {
+  position: absolute;
+  width: 16.5vw;
+  height: 17.8vw;
+  background-image: url(../images/koschey.png);
+  background-size: 16.5vw 17.8vw;
+  background-repeat: no-repeat;
+  left: 30.9vw;
+  bottom: 13.8vw;
+}
+.bucket2:hover {
+  transform: rotate(15deg);
+}
+.bucket3 {
+  position: absolute;
+  width: 16.5vw;
+  height: 17.8vw;
+  background-image: url(../images/baba_yaga.png);
+  background-size: 16.5vw 17.8vw;
+  background-repeat: no-repeat;
+  right: 30.9vw;
+  bottom: 13.8vw;
+}
+.bucket3:hover {
+  transform: rotate(15deg);
+}
+.bucket4 {
+  position: absolute;
+  width: 16.5vw;
+  height: 17.8vw;
+  background-image: url(../images/kikimora.png);
+  background-size: 16.5vw 17.8vw;
+  background-repeat: no-repeat;
+  right: 11vw;
+  bottom: 8.4vw;
+}
+.bucket4:hover {
+  transform: rotate(15deg);
+}
+.karamyslo {
+  position: absolute;
+  width: 88vw;
+  height: 18.5vw;
+  background-image: url(../images/karamyslo.svg);
+  background-size: 88vw 18.5vw;
+  background-repeat: no-repeat;
+  top: 18.3vw;
+}
+.rect1 {
+  position: absolute;
+  width: 13.9vw;
+  height: 5vw;
+  background-color: #e2e4ef;
+  border-radius: 0.97vw;
+  transform: rotate(6deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 11.5vw;
+  bottom: 5.6vw;
+}
+.rect2 {
+  position: absolute;
+  width: 13.5vw;
+  height: 5vw;
+  background-color: #e2e4ef;
+  border-radius: 0.97vw;
+  transform: rotate(-6deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 32vw;
+  bottom: 11.8vw;
+}
+.rect3 {
+  position: absolute;
+  width: 16.4vw;
+  height: 5vw;
+  background-color: #e2e4ef;
+  border-radius: 0.97vw;
+  transform: rotate(6deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 31.7vw;
+  bottom: 11.8vw;
+}
+.rect4 {
+  position: absolute;
+  width: 17.2vw;
+  height: 5vw;
+  background-color: #e2e4ef;
+  border-radius: 0.97vw;
+  transform: rotate(6deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 11vw;
+  bottom: 6.5vw;
+}
+#text11,
+#text12,
+#text13,
+#text14 {
+  font-family: 'Actay';
+  font-size: 3.33vw;
+  color: #181818;
 }

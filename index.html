@@ -8,28 +8,18 @@
     <script src="javascripts/scripts.js"></script>
   </head>
   <body>
-    <section class="section-1">
-      <div class="scene">
-        <img
-          id="frame"
-          class="frame"
-          src="images/space/frame_01.png"
-          alt="пространство"
-        />
-        <img class="sect_1" src="images/sect_1.svg" alt="" />
-        <div class="overlay">
-          <div class="decor">
-            <img src="images/decor.svg" alt="" />
-          </div>
+    <section class="section-1" id="section1">
+      <div class="scene1">
+        <video
+          id="scrollVideo"
+          class="scroll-video-source"
+          src="images/space/section1.mp4"
+          preload="auto"
+          muted
+          playsinline
+        ></video>
 
-          <div class="title">
-            АГЕНТСТВО ЗНАКОМСТВ<br />
-            ДЛЯ СЛАВЯНСКИХ<br />
-            СУЩЕСТВ
-          </div>
-
-          <div class="counter" id="counter">01/17</div>
-        </div>
+        <canvas id="scrollCanvas" class="scroll-canvas"></canvas>
       </div>
     </section>
     <section class="section-2">
@@ -71,7 +61,7 @@
           </div>
         </div>
       </div>
-
+      <img class="birch5" src="images/birch_long.png" alt="" />
       <div class="scene5">
         <img class="plate5" src="images/plate5.svg" alt="" />
 
@@ -97,6 +87,26 @@
         <div class="appleorbit5">
           <img class="appleplate5" src="images/apple5.svg" alt="" />
         </div>
+      </div>
+    </section>
+    <section class="section-6">
+      <div id="text10">наши агенты</div>
+      <div class="bucket1"></div>
+      <div class="bucket2"></div>
+      <div class="bucket3"></div>
+      <div class="bucket4"></div>
+      <div class="karamyslo"></div>
+      <div class="rect1">
+        <div id="text11">леший</div>
+      </div>
+      <div class="rect2">
+        <div id="text12">кощей</div>
+      </div>
+      <div class="rect3">
+        <div id="text13">баба яга</div>
+      </div>
+      <div class="rect4">
+        <div id="text14">кикимора</div>
       </div>
     </section>
   </body>

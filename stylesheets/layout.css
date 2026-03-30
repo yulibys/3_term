@@ -395,18 +395,25 @@ body {
   pointer-events: none;
 }
 
-.track5 {
+.linewrap5 {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 0;
-  display: flex;
-  gap: 4vw;
-  white-space: nowrap;
+  width: 140vw;
   transform: translateY(-50%) rotate(-18deg);
-  animation: run5 18s linear infinite;
+  transform-origin: center;
 }
 
-.track5 span {
+.track5 {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  animation: run5 10s linear infinite;
+  gap: 0;
+}
+
+.row5 {
+  flex: 0 0 auto;
   display: inline-block;
   padding: 1.2vw 2vw;
   background: #e2e4ef;
@@ -414,14 +421,15 @@ body {
   font-family: 'Actay';
   font-size: 3vw;
   line-height: 1;
+  margin-right: 0;
 }
 
 @keyframes run5 {
   from {
-    transform: translateX(0) translateY(-50%) rotate(-18deg);
+    transform: translateX(0);
   }
   to {
-    transform: translateX(-50%) translateY(-50%) rotate(-18deg);
+    transform: translateX(-50%);
   }
 }
 
@@ -475,18 +483,27 @@ body {
 
 .btn5 {
   position: absolute;
-  width: 3.4vw;
-  height: 3.4vw;
+  width: 4.2vw;
+  height: 4.2vw;
   left: 50%;
   top: 74%;
   transform: translate(-50%, -50%);
-  background: transparent;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 7;
-}
+  pointer-events: auto;
 
+  background: transparent;
+  border: 0.5vw solid #181818; /* ТВОЯ ЧЕРНАЯ ОБВОДКА */
+  border-radius: 50%;
+
+  z-index: 7;
+  cursor: pointer;
+}
+.btn5::after {
+  content: '';
+  position: absolute;
+  inset: 0.8vw;
+  border: 0.3vw solid #181818;
+  border-radius: 50%;
+}
 .hand5 {
   position: absolute;
   z-index: 6;
@@ -525,7 +542,6 @@ body {
   transform: translateX(12vw) translateY(-2vw);
 }
 
-/* яблоко сначала приезжает слева */
 .appleorbit5 {
   position: absolute;
   left: 30vw;
@@ -548,7 +564,6 @@ body {
   display: block;
 }
 
-/* появление рук */
 .section-5.active .leftgroup5 {
   opacity: 1;
   transform: translateX(0) translateY(0);
@@ -563,7 +578,6 @@ body {
   transform: translateX(0) translateY(0);
 }
 
-/* яблоко приезжает на блюдце */
 .section-5.active .appleorbit5 {
   opacity: 1;
   left: 50%;
@@ -571,7 +585,6 @@ body {
   transform: translate(-50%, -50%);
 }
 
-/* потом яблоко начинает ходить по кругу */
 .section-5.orbit .appleorbit5 {
   animation: orbit5 6s linear infinite;
 }
@@ -599,7 +612,6 @@ body {
   }
 }
 
-/* уход */
 .section-5.done .leftgroup5 {
   opacity: 0;
   transform: translateX(-14vw) translateY(4vw);

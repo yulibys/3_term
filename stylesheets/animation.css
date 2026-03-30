@@ -1,8 +1,39 @@
-/* @keyframes sect_1_letter {
-    from {
-        color: #181818;
-    }
-    to {
-        color: #E2E4EF;
-    }
-} */
+@keyframes fall4 {
+  0% {
+    transform: translateY(-70vw) rotate(var(--rot));
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(1.2vw) rotate(var(--rot));
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) rotate(var(--rot));
+    opacity: 1;
+  }
+}
+@keyframes run5 {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes orbit5 {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(10vw) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(10vw)
+      rotate(-360deg);
+  }
+}
+@keyframes spin5 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

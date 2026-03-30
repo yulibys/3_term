@@ -8,18 +8,19 @@
     <script src="javascripts/scripts.js"></script>
   </head>
   <body>
-    <section class="section-1" id="section1">
+    <section class="section-1">
       <div class="scene1">
-        <video
-          id="scrollVideo"
-          class="scroll-video-source"
-          src="images/space/section1.mp4"
-          preload="auto"
-          muted
-          playsinline
-        ></video>
+        <video class="bg-video1" autoplay muted loop playsinline preload="auto">
+          <source src="images/vid.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <img class="overlay-img1" src="images/sectt_1.svg" alt="" />
 
-        <canvas id="scrollCanvas" class="scroll-canvas"></canvas>
+    <div class="overlay1">
+      <div class="title1">
+        АГЕНТСТВО ЗНАКОМСТВ<br />
+        ДЛЯ СЛАВЯНСКИХ<br />
+        СУЩЕСТВ
       </div>
     </section>
     <section class="section-2">
@@ -43,6 +44,9 @@
     <section class="section-3">
       <div class="popup">
         <div id="text9">?</div>
+      </div>
+      <div class="info3" id="info3">
+        <div class="info3bg"></div>
       </div>
     </section>
     <section class="section-4">
@@ -91,23 +95,72 @@
     </section>
     <section class="section-6">
       <div id="text10">наши агенты</div>
-      <div class="bucket1"></div>
-      <div class="bucket2"></div>
-      <div class="bucket3"></div>
-      <div class="bucket4"></div>
-      <div class="karamyslo"></div>
-      <div class="rect1">
-        <div id="text11">леший</div>
-      </div>
-      <div class="rect2">
-        <div id="text12">кощей</div>
-      </div>
-      <div class="rect3">
-        <div id="text13">баба яга</div>
-      </div>
-      <div class="rect4">
-        <div id="text14">кикимора</div>
+        <div class="swing6" id="swing6">
+        <div class="bucket1"></div>
+        <div class="bucket2"></div>
+        <div class="bucket3"></div>
+        <div class="bucket4"></div>
+        <div class="karamyslo"></div>
+        <div class="rect1">
+          <div id="text11">леший</div>
+        </div>
+        <div class="rect2">
+          <div id="text12">кощей</div>
+        </div>
+        <div class="rect3">
+          <div id="text13">баба яга</div>
+        </div>
+        <div class="rect4">
+          <div id="text14">кикимора</div>
+        </div>
       </div>
     </section>
+  <section class="section-7" id="section7">
+    <div id="text15">кого ищешь?</div>
+
+    <div class="cards7">
+      <button class="card7" id="manBtn" type="button">
+        <div class="icon7 iconman7"></div>
+        <div class="btn7">СУЖЕНОГО</div>
+      </button>
+
+    <button class="card7" id="womanBtn" type="button">
+        <div class="icon7 iconwoman7"></div>
+        <div class="btn7">СУЖЕНУЮ</div>
+      </button>
+   </div>
+  </section>
+
+  <section class="section-8" id="section8">
+    <div id="text16">твой результат</div>
+    <div class="center8">
+      <img id="resultImage8" class="result8" alt="" />
+    </div>
+  </section>
+  <section class="section-9">
+  <div class="credits9">
+    <div class="titleline9">СОЗДАНО МАГИЕЙ</div>
+
+    <div class="line9">
+      <span class="left9">БЫСОВОЙ</span>
+      <img class="pic9" src="images/credit_1.png" alt="" />
+      <span class="right9">ЮЛИИ</span>
+    </div>
+
+    <div class="titleline9">ПРИ ПОДДЕРЖКЕ</div>
+
+    <div class="line9">
+      <span class="left9">РИХТЕР</span>
+      <img class="pic9" src="images/credit_2.png" alt="" />
+      <span class="right9">КАМИЛЛЫ</span>
+    </div>
+
+    <div class="line9">
+      <span class="left9">И КОМКОВОЙ</span>
+      <img class="pic9" src="images/credit_3.png" alt="" />
+      <span class="right9">АННЫ</span>
+    </div>
+  </div>
+</section>
   </body>
 </html>

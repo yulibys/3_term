@@ -1,4 +1,13 @@
 @media screen and (min-width: 481px) and (max-width: 1279px) {
 }
-@media screen and (min-width: 0px) and (max-width: 480px) {
-}
+/* @media screen and (min-width: 0px) and (max-width: 480px) {
+  .desktop-video {
+    display: none;
+  }
+  .mobile-video {
+    display: block;
+  }
+  .bg-video1 {
+    height: 62.2vw;
+  }
+} */

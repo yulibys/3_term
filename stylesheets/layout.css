@@ -1,0 +1,625 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+.section-1 {
+  position: relative;
+  width: 100vw;
+  height: 62vw;
+  background: #181818;
+}
+
+.scene {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 1;
+  transition: opacity 0.4s linear;
+}
+
+.sect_1 {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.decor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 42vw;
+}
+
+.decor img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  position: absolute;
+  top: 8vw;
+  right: 9vw;
+  color: #91040c;
+  font-family: 'Actay_wide';
+  font-size: 3.3vw;
+  line-height: 0.92;
+  text-align: left;
+  max-width: 49vw;
+}
+
+.counter {
+  position: absolute;
+  right: 8vw;
+  bottom: 5vw;
+  color: #91040c;
+  font-family: 'Actay';
+  font-size: 2.2vw;
+  line-height: 1;
+}
+
+.section-2 {
+  width: 100vw;
+  height: 38vw;
+  background-image: url(../images/section_1.svg);
+  background-size: 100vw 38vw;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+.letters {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#text1,
+#text2,
+#text3,
+#text4,
+#text5,
+#text6,
+#text7,
+#text8,
+.apple1,
+.apple2,
+.apple3,
+.apple4,
+.apple5,
+.apple6 {
+  position: absolute;
+  touch-action: none;
+  user-select: none;
+  cursor: grab;
+  will-change: transform;
+  transform-origin: center;
+  transform: translate(0px, 0px) rotate(var(--rot));
+}
+#text1,
+#text2,
+#text3,
+#text4,
+#text5,
+#text6,
+#text7,
+#text8 {
+  font-family: 'Actay_wide';
+  font-size: 27.77vw;
+  color: #181818;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+#text1 {
+  left: -1vw;
+  top: 8vw;
+  --rot: 40.65deg;
+}
+#text2 {
+  left: 13vw;
+  top: 24vw;
+  --rot: 54.83deg;
+}
+#text3 {
+  left: 21vw;
+  top: 4vw;
+  --rot: -38.14deg;
+}
+#text4 {
+  left: 38vw;
+  top: 18vw;
+  --rot: 38.08deg;
+}
+
+#text5 {
+  left: 53vw;
+  top: 6vw;
+  --rot: -33.06deg;
+}
+#text6 {
+  left: 62vw;
+  top: 21vw;
+  --rot: -49.71deg;
+}
+#text7 {
+  left: 77vw;
+  top: 4vw;
+  --rot: -38.65deg;
+}
+
+#text8 {
+  left: 82vw;
+  top: 25vw;
+  --rot: 48.5deg;
+}
+.apple1,
+.apple2,
+.apple3,
+.apple4,
+.apple5,
+.apple6 {
+  width: 6.18vw;
+  height: 7.29vw;
+  background-image: url(../images/apple.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: filter 0.2s ease;
+}
+.apple1 {
+  left: 13vw;
+  top: 8vw;
+  --rot: 12deg;
+}
+.apple2 {
+  left: 44vw;
+  top: 10vw;
+  --rot: -8deg;
+}
+.apple3 {
+  left: 71vw;
+  top: 7vw;
+  --rot: 10deg;
+}
+.apple4 {
+  left: 2vw;
+  top: 37vw;
+  --rot: -12deg;
+}
+.apple5 {
+  left: 35vw;
+  top: 40vw;
+  --rot: 15deg;
+}
+.apple6 {
+  left: 87vw;
+  top: 42vw;
+  --rot: -15deg;
+}
+.dragging {
+  color: #e2e4ef !important;
+  cursor: grabbing;
+}
+.apple1.dragging,
+.apple2.dragging,
+.apple3.dragging,
+.apple4.dragging,
+.apple5.dragging,
+.apple6.dragging {
+  filter: brightness(0) saturate(100%) invert(94%) sepia(8%) saturate(208%)
+    hue-rotate(191deg) brightness(97%) contrast(92%);
+}
+.section-3 {
+  width: 100vw;
+  height: 15vw;
+  background-color: #181818;
+  position: relative;
+}
+.popup {
+  top: 1.3vw;
+  right: 4.4vw;
+  width: 3.5vw;
+  height: 3.5vw;
+  border: 0.06vw solid #e2e4ef;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#text9 {
+  font-family: 'Actay';
+  color: #e2e4ef;
+  font-size: 2.77vw;
+  line-height: 0.6vw;
+  transform: translateY(17%);
+}
+.birch-img {
+  position: absolute;
+  width: 7vw;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.section-2 {
+  width: 100vw;
+  height: 58.47vw;
+  background-image: url(../images/section_1.svg);
+  background-size: 100vw 58.47vw;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.section-4 {
+  width: 100vw;
+  height: 52vw;
+  position: relative;
+  overflow: hidden;
+  background-image: url(../images/sect_4.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.field4 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.unit4 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.card4 {
+  border-radius: 1.2vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-70vw) rotate(var(--rot));
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.card4.show {
+  animation: fall4 1.1s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+  animation-delay: var(--delay);
+}
+
+@keyframes fall4 {
+  0% {
+    transform: translateY(-70vw) rotate(var(--rot));
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(1.2vw) rotate(var(--rot));
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) rotate(var(--rot));
+    opacity: 1;
+  }
+}
+
+.text4 {
+  min-width: 12vw;
+  height: 5.8vw;
+  padding: 0 1.7vw;
+  background: #181818;
+  border-radius: 1.1vw;
+}
+
+.text4 span {
+  font-family: 'Actay';
+  font-size: 3vw;
+  line-height: 1;
+  color: #e2e4ef;
+  white-space: nowrap;
+}
+
+.img4 {
+  width: 11.5vw;
+  height: 10.8vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 1.2vw;
+}
+
+.birch4 {
+  background-image: url(../images/birch_rect.png);
+}
+
+.girl4 {
+  background-image: url(../images/girl_rect.png);
+}
+
+.trees4 {
+  background-image: url(../images/trees_rect.png);
+}
+
+.tree4 {
+  background-image: url(../images/tree_rect.png);
+}
+
+.section-5 {
+  width: 100vw;
+  height: 56vw;
+  position: relative;
+  overflow: hidden;
+  background: #181818;
+}
+
+.line5 {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.track5 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: flex;
+  gap: 4vw;
+  white-space: nowrap;
+  transform: translateY(-50%) rotate(-18deg);
+  animation: run5 18s linear infinite;
+}
+
+.track5 span {
+  display: inline-block;
+  padding: 1.2vw 2vw;
+  background: #e2e4ef;
+  color: #91040c;
+  font-family: 'Actay';
+  font-size: 3vw;
+  line-height: 1;
+}
+
+@keyframes run5 {
+  from {
+    transform: translateX(0) translateY(-50%) rotate(-18deg);
+  }
+  to {
+    transform: translateX(-50%) translateY(-50%) rotate(-18deg);
+  }
+}
+
+.scene5 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.plate5 {
+  position: absolute;
+  width: 54vw;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.portal5 {
+  position: absolute;
+  width: 33vw;
+  height: 33vw;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 4;
+  background: #181818;
+}
+
+.video5,
+.canvas5,
+.photo5 {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.canvas5 {
+  display: none;
+}
+
+.photo5 {
+  display: none;
+}
+
+.btn5 {
+  position: absolute;
+  width: 3.4vw;
+  height: 3.4vw;
+  left: 50%;
+  top: 74%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 7;
+}
+
+.hand5 {
+  position: absolute;
+  z-index: 6;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 1.2s ease,
+    opacity 1.2s ease;
+}
+
+.leftgroup5 {
+  position: absolute;
+  left: -4vw;
+  bottom: 7vw;
+  width: 34vw;
+  height: 16vw;
+  z-index: 6;
+  opacity: 0;
+  transform: translateX(-12vw) translateY(3vw);
+  transition:
+    transform 1.2s ease,
+    opacity 1.2s ease;
+}
+
+.handleft5 {
+  position: absolute;
+  width: 28vw;
+  left: 0;
+  bottom: 0;
+}
+
+.handright5 {
+  width: 32vw;
+  right: -2vw;
+  top: 10vw;
+  transform: translateX(12vw) translateY(-2vw);
+}
+
+/* яблоко сначала приезжает слева */
+.appleorbit5 {
+  position: absolute;
+  left: 30vw;
+  top: 31vw;
+  width: 6vw;
+  height: 6vw;
+  z-index: 10;
+  opacity: 0;
+  transform: translate(-10vw, 2vw);
+  transition:
+    left 1.2s ease,
+    top 1.2s ease,
+    transform 1.2s ease,
+    opacity 1.2s ease;
+}
+
+.appleplate5 {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* появление рук */
+.section-5.active .leftgroup5 {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+.section-5.active .handleft5 {
+  opacity: 1;
+}
+
+.section-5.active .handright5 {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* яблоко приезжает на блюдце */
+.section-5.active .appleorbit5 {
+  opacity: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* потом яблоко начинает ходить по кругу */
+.section-5.orbit .appleorbit5 {
+  animation: orbit5 6s linear infinite;
+}
+
+.section-5.orbit .appleplate5 {
+  animation: spin5 1.8s linear infinite;
+}
+
+@keyframes orbit5 {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(10vw) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(10vw)
+      rotate(-360deg);
+  }
+}
+
+@keyframes spin5 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* уход */
+.section-5.done .leftgroup5 {
+  opacity: 0;
+  transform: translateX(-14vw) translateY(4vw);
+}
+
+.section-5.done .handleft5 {
+  opacity: 0;
+}
+
+.section-5.done .handright5 {
+  opacity: 0;
+  transform: translateX(14vw) translateY(-4vw);
+}
+
+.section-5.done .appleorbit5 {
+  opacity: 0;
+  animation: none;
+  transform: translate(8vw, -2vw);
+}
+
+.section-5.done .appleplate5 {
+  animation: none;
+}
